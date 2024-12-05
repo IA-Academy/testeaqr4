@@ -7,16 +7,16 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "start": "node server.js" // Adicione esta linha
+    "start": "node server.js"
   },
   "dependencies": {
-    "express": "^4.18.2", // Adicione esta linha
+    "@phosphor-icons/react": "^2.0.10",
+    "express": "^4.21.1",
+    "framer-motion": "^10.16.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "styled-components": "^6.0.7",
-    "framer-motion": "^10.16.4",
     "recharts": "^2.8.0",
-    "@phosphor-icons/react": "^2.0.10"
+    "styled-components": "^6.0.7"
   },
   "devDependencies": {
     "@types/react": "^18.2.15",
