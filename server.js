@@ -1,30 +1,32 @@
 import express from 'express';
-import path from 'path';
 import { fileURLToPath } from 'url';
+import { dirname, join } from 'path';
+import compression from 'compression';
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-
+const __dirname = dirname(fileURLToPath(import.meta.url));
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// Serve static files from the dist directory with proper caching
-app.use(express.static(path.join(__dirname, 'dist'), {
+// Enable gzip compression
+app.use(compression());
+
+// Serve static files with caching headers
+app.use(express.static('dist', {
   maxAge: '1y',
-  etag: true
+  etag: true,
 }));
 
-// Explicitly handle assets directory
-app.use('/assets', express.static(path.join(__dirname, 'dist/assets'), {
-  maxAge: '1y',
-  etag: true
-}));
-
-// Handle all routes by serving index.html
+// Always return the main index.html for any route
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'dist', 'index.html'));
+  res.sendFile(join(__dirname, 'dist', 'index.html'));
+});
+
+// Error handling middleware
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).send('Something broke!');
 });
 
 app.listen(PORT, '0.0.0.0', () => {
-  console.log(`Server running on port ${PORT}`);
+  console.log(`Server is running on port ${PORT}`);
 });
