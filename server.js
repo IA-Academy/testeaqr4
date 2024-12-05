@@ -8,8 +8,17 @@ const __dirname = path.dirname(__filename);
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// Serve static files from the dist directory
-app.use(express.static(path.join(__dirname, 'dist')));
+// Serve static files from the dist directory with proper caching
+app.use(express.static(path.join(__dirname, 'dist'), {
+  maxAge: '1y',
+  etag: true
+}));
+
+// Explicitly handle assets directory
+app.use('/assets', express.static(path.join(__dirname, 'dist/assets'), {
+  maxAge: '1y',
+  etag: true
+}));
 
 // Handle all routes by serving index.html
 app.get('*', (req, res) => {
