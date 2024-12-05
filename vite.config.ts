@@ -4,11 +4,11 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   server: {
-    host: '0.0.0.0', // Permitir conexões externas
-    port: process.env.PORT ? parseInt(process.env.PORT) : 3000, // Usar a porta especificada pela variável de ambiente PORT
+    host: true,
+    port: process.env.PORT ? parseInt(process.env.PORT) : 3000
   },
-  preview: {
-    host: '0.0.0.0', // Permitir conexões externas
-    port: process.env.PORT ? parseInt(process.env.PORT) : 3000, // Usar a porta especificada pela variável de ambiente PORT
+  build: {
+    outDir: 'dist',
+    assetsDir: 'assets'
   }
 })
