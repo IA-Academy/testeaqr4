@@ -72,11 +72,11 @@ export const questions: Question[] = [
     id: 7,
     text: "Comunica a simplicidade, 'preferi mos estar em casa com nossos amigos do que ir para uma balada'.",
     options: [
-      { text: "Muito relevante", relevance: 5, archetypes: [{ type: 'everyman', weight: 2 }] },
-      { text: "Relevante", relevance: 4, archetypes: [{ type: 'everyman', weight: 1.5 }] },
-      { text: "Neutro", relevance: 3, archetypes: [{ type: 'everyman', weight: 1 }] },
-      { text: "Pouco relevante", relevance: 2, archetypes: [{ type: 'everyman', weight: 0.5 }] },
-      { text: "Irrelevante", relevance: 1, archetypes: [{ type: 'everyman', weight: 0.25 }] }
+      { text: "Muito relevante", relevance: 5, archetypes: [{ type: 'self', weight: 2 }] },
+      { text: "Relevante", relevance: 4, archetypes: [{ type: 'self', weight: 1.5 }] },
+      { text: "Neutro", relevance: 3, archetypes: [{ type: 'self', weight: 1 }] },
+      { text: "Pouco relevante", relevance: 2, archetypes: [{ type: 'self', weight: 0.5 }] },
+      { text: "Irrelevante", relevance: 1, archetypes: [{ type: 'self', weight: 0.25 }] }
     ]
   },
   {

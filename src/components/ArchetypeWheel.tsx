@@ -3,7 +3,7 @@ import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip } from 'recharts';
   import { archetypes } from '../data/archetypes';
   import { 
     Brain, Heart, Crown, Lightbulb, Compass, Users, Smiley,
-    ShieldStar, MagicWand, PaintBrush, Lightning, Baby, IconWeight
+    ShieldStar, MagicWand, PaintBrush, Lightning, Baby
   } from '@phosphor-icons/react';
 
   const WheelContainer = styled.div`
@@ -45,7 +45,7 @@ import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip } from 'recharts';
   `;
 
   const getArchetypeIcon = (type: string) => {
-    const iconProps = { size: 32, weight: "bold" as IconWeight }; // Corrected type
+    const iconProps = { size: 32, weight: "bold" as IconWeight }; // Adjusted type
   
     switch(type) {
       case 'sage': return <Brain {...iconProps} />;
