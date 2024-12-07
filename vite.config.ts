@@ -6,5 +6,11 @@ export default defineConfig({
   server: {
     port: process.env.PORT ? parseInt(process.env.PORT) : 3000,
     host: true
+  },
+  build: {
+    outDir: 'dist',
+    assetsDir: 'assets',
+    sourcemap: false,
+    emptyOutDir: true,
   }
 });
