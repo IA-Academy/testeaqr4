@@ -10,8 +10,7 @@ export type ArchetypeType =
     | 'magician'
     | 'ruler'
     | 'creator'
-    | 'rebel'
-    | 'self'; // Added 'self'
+    | 'rebel';
 
   export interface ArchetypeData {
     id: string;
